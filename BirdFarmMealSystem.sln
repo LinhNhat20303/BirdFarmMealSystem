@@ -9,11 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business Layer", "2. Bus
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Layer", "3. Data Layer", "{625FE351-C73C-44C8-8E48-60226256F4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{DB039489-52DC-4EC7-9712-F3A626EB5A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{DB039489-52DC-4EC7-9712-F3A626EB5A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{74B04608-9068-4686-951D-BB8FF69F38C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{74B04608-9068-4686-951D-BB8FF69F38C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApp", "WinApp\WinApp.csproj", "{DF05BC3C-7903-4E67-8D89-07672DBACB31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp", "WinApp\WinApp.csproj", "{DF05BC3C-7903-4E67-8D89-07672DBACB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginForm", "LoginForm\LoginForm.csproj", "{B900C94D-92AD-43D4-8F14-BF3402790D7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DF05BC3C-7903-4E67-8D89-07672DBACB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF05BC3C-7903-4E67-8D89-07672DBACB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF05BC3C-7903-4E67-8D89-07672DBACB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B900C94D-92AD-43D4-8F14-BF3402790D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B900C94D-92AD-43D4-8F14-BF3402790D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B900C94D-92AD-43D4-8F14-BF3402790D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B900C94D-92AD-43D4-8F14-BF3402790D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{DB039489-52DC-4EC7-9712-F3A626EB5A62} = {625FE351-C73C-44C8-8E48-60226256F4A8}
 		{74B04608-9068-4686-951D-BB8FF69F38C1} = {709ABF8B-45ED-46C7-97D5-10EECA660D14}
 		{DF05BC3C-7903-4E67-8D89-07672DBACB31} = {C14A781D-F702-4B33-8E78-CD24E1753335}
+		{B900C94D-92AD-43D4-8F14-BF3402790D7C} = {C14A781D-F702-4B33-8E78-CD24E1753335}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5BD99C5-400C-407C-A009-25E9510E0672}
