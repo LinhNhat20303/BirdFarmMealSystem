@@ -95,7 +95,7 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(632, 94);
+            pictureBox3.Location = new Point(632, 48);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(96, 39);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -107,7 +107,7 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(750, 94);
+            pictureBox4.Location = new Point(750, 48);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(96, 39);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -118,7 +118,7 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(863, 94);
+            pictureBox5.Location = new Point(863, 48);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(96, 39);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -129,7 +129,7 @@
             // 
             pictureBox6.BackColor = Color.Transparent;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(980, 94);
+            pictureBox6.Location = new Point(980, 48);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(96, 39);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
