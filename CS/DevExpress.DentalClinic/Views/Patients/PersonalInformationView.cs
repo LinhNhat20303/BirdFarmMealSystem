@@ -14,11 +14,15 @@ using DevExpress.XtraGrid.Views.Tile.ViewInfo;
 using DevExpress.XtraGrid.Views.WinExplorer;
 using DevExpress.XtraGrid.Views.WinExplorer.ViewInfo;
 
-namespace DevExpress.DentalClinic.View {
-    public partial class PersonalInformationView : XtraUserControl {
-        public PersonalInformationView() {
+namespace DevExpress.DentalClinic.View
+{
+    public partial class PersonalInformationView : XtraUserControl
+    {
+        public PersonalInformationView()
+        {
             InitializeComponent();
-            if(!mvvmContext.IsDesignMode) {
+            if (!mvvmContext.IsDesignMode)
+            {
                 InitializeBindings();
                 InitializeEditors();
                 Messenger.Default.Register<ReloadDataMessage>(this, OnReloadData);
@@ -30,33 +34,41 @@ namespace DevExpress.DentalClinic.View {
             winExplorerView1.OptionsImageLoad.LoadThumbnailImagesFromDataSource = false;
             winExplorerView1.OptionsImageLoad.AsyncLoad = true;
         }
-        void TileView1_GetThumbnailImage(object sender, ThumbnailImageEventArgs e) {
+        void TileView1_GetThumbnailImage(object sender, ThumbnailImageEventArgs e)
+        {
             var fileName = (string)winExplorerView1.GetRowCellValue(e.DataSourceIndex, colName);
             var ext = Path.GetExtension(fileName);
             e.ThumbnailImage = FileSystemHelper.GetFileExtensionImage(ext, IconSizeType.Large, new Size(64, 64));
         }
-        void OnWinExplorerViewFocusedRowChanged(object sender, XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+        void OnWinExplorerViewFocusedRowChanged(object sender, XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
             winExplorerView1.RefreshContextButtons();
         }
-        void OnWinExplorerViewContextButtonCustomize(object sender, WinExplorerViewContextButtonCustomizeEventArgs e) {
-            if(winExplorerView1.FocusedRowHandle == e.RowHandle) {
+        void OnWinExplorerViewContextButtonCustomize(object sender, WinExplorerViewContextButtonCustomizeEventArgs e)
+        {
+            if (winExplorerView1.FocusedRowHandle == e.RowHandle)
+            {
                 e.Item.AppearanceNormal.ForeColor = Color.White;
                 e.Item.AppearanceHover.ForeColor = Color.White;
             }
         }
-        protected override void OnLookAndFeelChanged() {
+        protected override void OnLookAndFeelChanged()
+        {
             base.OnLookAndFeelChanged();
             UpdateBackColors();
         }
-        void OnReloadData(ReloadDataMessage message) {
+        void OnReloadData(ReloadDataMessage message)
+        {
             InitStepProgressBar(true);
         }
-        void UpdateBackColors() {
+        void UpdateBackColors()
+        {
             var skinBackColor = LookAndFeelHelper.GetSystemColor(LookAndFeel, SystemColors.Window);
             stepProgressBar1.Appearance.BackColor = skinBackColor;
             panelControl2.BackColor = skinBackColor;
         }
-        void InitializeBindings() {
+        void InitializeBindings()
+        {
             var fluentAPI = mvvmContext.OfType<PersonalInformationViewModel>();
             fluentAPI.BindCommand(sbSave, x => x.Save);
             fluentAPI.SetBinding(xpBindingSourcePatient, x => x.DataSource, x => x.Patient);
@@ -64,7 +76,7 @@ namespace DevExpress.DentalClinic.View {
             fluentAPI.SetBinding(memoEditNotes, x => x.EditValue, x => x.Patient.Notes);
             fluentAPI.SetBinding(memoEditAllergies, x => x.EditValue, x => x.Patient.Allergies);
             fluentAPI.SetBinding(xpBindingSourceDocuments, x => x.DataSource, x => x.Patient.DocumentCollection);
-            fluentAPI.BindCommand(sbPrintPlan, x => x.PrintPlan);
+
 
             var btnLoadFile = searchControl1.Properties.Buttons.FirstOrDefault(b => Equals(b.Tag, "loadFile"));
             fluentAPI.BindCommand(btnLoadFile, x => x.LoadDocument);
@@ -75,27 +87,32 @@ namespace DevExpress.DentalClinic.View {
             fluentAPI.WithEvent<StepProgressBarItemHyperlinkClickEventArgs>(stepProgressBar1, nameof(stepProgressBar1.ItemHyperlinkClick))
                 .EventToCommand(x => x.EditAppointment, ea => (int)ea.Item.Tag);
         }
-        void InitializeEditors() {
+        void InitializeEditors()
+        {
             var viewModel = mvvmContext.GetViewModel<PersonalInformationViewModel>();
-            if(viewModel == null || !viewModel.IsNew) return;
+            if (viewModel == null || !viewModel.IsNew) return;
             this.lciFirstNameTextEdit.Text = "First Name <color=@Danger>*</color>";
             this.lciLastNameTextEdit.Text = "Last Name <color=@Danger>*</color>";
             this.lciPhoneTextEdit.Text = "Phone <color=@Danger>*</color>";
             this.lciEmailTextEdit.Text = "Email <color=@Danger>*</color>";
         }
-        void InitStepProgressBar(bool reloadData = false) {
+        void InitStepProgressBar(bool reloadData = false)
+        {
             stepProgressBar1.Items.Clear();
             var viewModel = mvvmContext.GetViewModel<PersonalInformationViewModel>();
-            if(viewModel == null) return;
-            if(reloadData)
+            if (viewModel == null) return;
+            if (reloadData)
                 viewModel.Patient.AppointmentCollection.Reload();
             var groups = viewModel.Patient.AppointmentCollection.Where(x => x.Status == AppointmentStatus.Completed || x.Status == AppointmentStatus.Open).OrderBy(x => x.Date).GroupBy(x => x.Date.ToString("MMMM dd yyyy"));
-            foreach(var group in groups) {
+            foreach (var group in groups)
+            {
                 StepProgressBarItem spItem = null;
-                foreach(var appointment in group) {
+                foreach (var appointment in group)
+                {
                     DateTime startTime = appointment.Date;
                     DateTime endTime = appointment.Date;
-                    foreach(var pc in appointment.ProcedureCollection) {
+                    foreach (var pc in appointment.ProcedureCollection)
+                    {
                         spItem = new StepProgressBarItem();
                         startTime = endTime;
                         endTime = endTime.Add(pc.Procedure.Duration);
@@ -109,10 +126,12 @@ namespace DevExpress.DentalClinic.View {
                 spItem.ContentBlock1.Caption = group.Key;
             }
         }
-        T GetRow<T>(ContextItemClickEventArgs args) {
+        T GetRow<T>(ContextItemClickEventArgs args)
+        {
             return (T)winExplorerView1.GetRow((int)args.DataItem);
         }
-        T GetRow<T>(WinExplorerItemViewInfo winExplorerItemViewInfo) {
+        T GetRow<T>(WinExplorerItemViewInfo winExplorerItemViewInfo)
+        {
             return (T)winExplorerView1.GetRow(winExplorerItemViewInfo.Row.RowHandle);
         }
     }

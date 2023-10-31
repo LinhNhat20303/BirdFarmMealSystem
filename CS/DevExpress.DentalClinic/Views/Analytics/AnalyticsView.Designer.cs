@@ -40,11 +40,11 @@
             this.tabPane.AppearanceButton.Pressed.Options.UseFont = true;
             this.tabPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane.Location = new System.Drawing.Point(0, 0);
-            this.tabPane.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tabPane.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabPane.Name = "tabPane";
-            this.tabPane.RegularSize = new System.Drawing.Size(1082, 635);
+            this.tabPane.RegularSize = new System.Drawing.Size(1352, 794);
             this.tabPane.SelectedPage = null;
-            this.tabPane.Size = new System.Drawing.Size(1082, 635);
+            this.tabPane.Size = new System.Drawing.Size(1352, 794);
             this.tabPane.TabIndex = 0;
             this.tabPane.Text = "tabPane1";
             // 
@@ -55,12 +55,12 @@
             // 
             // AnalyticsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tabPane);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "AnalyticsView";
-            this.Size = new System.Drawing.Size(1082, 635);
+            this.Size = new System.Drawing.Size(1352, 794);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             this.ResumeLayout(false);

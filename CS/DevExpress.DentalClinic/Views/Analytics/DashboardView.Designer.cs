@@ -36,17 +36,20 @@ namespace DevExpress.DentalClinic.View {
             this.dashboardViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewer1.EnableWaitForm = false;
             this.dashboardViewer1.Location = new System.Drawing.Point(0, 0);
+            this.dashboardViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dashboardViewer1.Name = "dashboardViewer1";
-            this.dashboardViewer1.Size = new System.Drawing.Size(1082, 635);
+            this.dashboardViewer1.Size = new System.Drawing.Size(1352, 794);
             this.dashboardViewer1.TabIndex = 0;
+            this.dashboardViewer1.Load += new System.EventHandler(this.dashboardViewer1_Load);
             // 
             // DashboardView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dashboardViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DashboardView";
-            this.Size = new System.Drawing.Size(1082, 635);
+            this.Size = new System.Drawing.Size(1352, 794);
             ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer1)).EndInit();
             this.ResumeLayout(false);
 

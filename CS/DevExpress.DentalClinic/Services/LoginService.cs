@@ -37,7 +37,7 @@ namespace DevExpress.DentalClinic.Services {
             return viewModel.LoginResult;
         }
         bool IsDefaultPasswordCore(string name, bool showMessage) {
-            string databasePath = DBPathHelper.EnsureWriteable(Application.StartupPath, "BirdFarmMealSystem\\DevExpress.DentalClinic\\DentalCabinet.db");
+            string databasePath = DBPathHelper.EnsureWriteable(Application.StartupPath, "BirdFarmMealSystem\\BirdReup\\BirdFarmMealSystem\\DentalCabinet.db");
             string connectionString = @"XpoProvider=SQLite;Data Source=" + databasePath;
             AuthenticationStandard authentication = new AuthenticationStandard();
             SecurityStrategyComplex security = new SecurityStrategyComplex(typeof(Employee), typeof(EmployeeRole), authentication);

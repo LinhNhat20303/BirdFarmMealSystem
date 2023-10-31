@@ -19,7 +19,7 @@ namespace DevExpress.DentalClinic
         {
             return Task.Run(() =>
             {
-                string databasePath = DBPathHelper.EnsureWriteable(Application.StartupPath, "BirdFarmMealSystem\\DevExpress.DentalClinic\\DentalCabinet.db");
+                string databasePath = DBPathHelper.EnsureWriteable(Application.StartupPath, "BirdFarmMealSystem\\BirdReup\\BirdFarmMealSystem\\DentalCabinet.db");
                 string connectionString = @"XpoProvider=SQLite;Data Source=" + databasePath;
                 var authentication = new AuthenticationStandard();
                 var security = new SecurityStrategyComplex(typeof(PermissionPolicyUser), typeof(PermissionPolicyRole), authentication);
